@@ -52,6 +52,7 @@ public class Board2D
     
     public void printBoard()
     {
+        Console.WriteLine("  " + new string('=', MAX_HORIZONTAL*2));
         for(int x = MAX_VERTICAL-1; x >= 0; x--)
         {
             Console.Write("  ");
