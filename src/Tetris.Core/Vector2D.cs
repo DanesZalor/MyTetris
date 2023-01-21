@@ -17,13 +17,11 @@ public struct Vector2D
             Y = (byte)(a.Y + b.Y)
         };
     
-
     public static Vector2D operator -(Vector2D a, Vector2D b)
         => new Vector2D(){
             X = (byte)(a.X - b.X), 
             Y = (byte)(a.Y - b.Y) 
         };
-    
 
     public static bool operator ==(Vector2D a, Vector2D b)
         => (a.X == b.X) && (a.Y == b.Y);
