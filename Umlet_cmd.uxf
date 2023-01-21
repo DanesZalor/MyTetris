@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.0.0">
-  <zoom_level>11</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>99</x>
-      <y>66</y>
-      <w>165</w>
-      <h>242</h>
+      <x>324</x>
+      <y>315</y>
+      <w>135</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>Board2D : int[]
 --
@@ -17,10 +17,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>99</y>
-      <w>22</w>
-      <h>198</h>
+      <x>333</x>
+      <y>342</y>
+      <w>18</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>0
 --
@@ -38,10 +38,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>132</x>
-      <y>99</y>
-      <w>22</w>
-      <h>198</h>
+      <x>351</x>
+      <y>342</y>
+      <w>18</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>1
 --
@@ -59,10 +59,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>154</x>
-      <y>99</y>
-      <w>22</w>
-      <h>198</h>
+      <x>369</x>
+      <y>342</y>
+      <w>18</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>2
 --
@@ -80,10 +80,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>231</x>
-      <y>99</y>
-      <w>22</w>
-      <h>198</h>
+      <x>432</x>
+      <y>342</y>
+      <w>18</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>n
 --
@@ -101,10 +101,10 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>176</x>
-      <y>99</y>
-      <w>33</w>
-      <h>33</h>
+      <x>387</x>
+      <y>342</y>
+      <w>27</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>...</panel_attributes>
     <additional_attributes/>
@@ -112,26 +112,31 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>484</x>
-      <y>242</y>
-      <w>253</w>
-      <h>176</h>
+      <x>531</x>
+      <y>450</y>
+      <w>153</w>
+      <h>144</h>
     </coordinates>
-    <panel_attributes>Game
+    <panel_attributes>PiecePlacer
 --
-- board : Board2D
-- currentPiece : Piece
 
---</panel_attributes>
+- board : Board2D
+- currentPiece : Piece?
+
+--
+
++ canRotate() : bool
++ hardDrop()
++</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>99</x>
-      <y>363</y>
-      <w>220</w>
-      <h>165</h>
+      <x>324</x>
+      <y>522</y>
+      <w>180</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>/Piece/
 --
@@ -147,10 +152,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>605</y>
-      <w>121</w>
-      <h>33</h>
+      <x>351</x>
+      <y>675</y>
+      <w>99</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>TPiece :: Piece</panel_attributes>
     <additional_attributes/>
@@ -158,34 +163,134 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>55</x>
-      <y>517</y>
-      <w>165</w>
-      <h>110</h>
+      <x>324</x>
+      <y>648</y>
+      <w>45</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>130.0;10.0;130.0;40.0;10.0;60.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;30.0;40.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>11</x>
-      <y>671</y>
-      <w>121</w>
-      <h>33</h>
+      <x>351</x>
+      <y>711</y>
+      <w>99</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>OPiece :: Piece</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>603</y>
+      <w>153</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>PieceQueue
+--
+- queue : Queue&lt;Piece&gt;
+
+--
++ Pop() : Piece</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>495</y>
+      <w>198</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+
+- piecePlacer : PiecePlacer
+- pieceQueue : PieceQueue
+- heldPiece : Piece
+
+--
+
++ Process()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>297</x>
+      <y>117</y>
+      <w>1017</w>
+      <h>702</h>
+    </coordinates>
+    <panel_attributes>Tetris.CLI
+-
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>279</y>
+      <w>603</w>
+      <h>522</h>
+    </coordinates>
+    <panel_attributes>Tetris.Core
+-
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
     <id>Relation</id>
     <coordinates>
-      <x>66</x>
-      <y>517</y>
-      <w>154</w>
-      <h>176</h>
+      <x>324</x>
+      <y>648</y>
+      <w>45</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>120.0;10.0;120.0;110.0;10.0;130.0;10.0;140.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;30.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>351</x>
+      <y>747</y>
+      <w>99</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>IPiece :: Piece</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>648</y>
+      <w>45</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0;30.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>315</y>
+      <w>153</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Vector2
+--
++ X : byte
++ Y : byte
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
