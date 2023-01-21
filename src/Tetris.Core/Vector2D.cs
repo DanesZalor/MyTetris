@@ -30,4 +30,12 @@ public struct Vector2D
 
     public static bool operator !=(Vector2D a, Vector2D b)
         => (a.X != b.X) || (a.Y != b.Y);
+
+    public override bool Equals(object? obj)
+        => obj != null && obj is Vector2D && 
+            this == (Vector2D)obj; 
+
+    public override int GetHashCode()
+        => this.GetHashCode();
+    
 }
