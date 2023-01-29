@@ -4,9 +4,16 @@ public class Program
 {
     public static void Main()
     {
-        var v1 = new Vector2D(1,1);
-        var v2 = new Vector2D(1,2);
+        var b = new Board2D();
 
-        Console.WriteLine(v1 == v2);
+        for(int i = 0; i < 10; i++) b[1,i] = true;
+        for(int i = 0; i < 10; i+=2) b[0,i] = true;
+        for(int i = 1; i < 10; i+=2) b[2,i] = true;
+
+        b.printBoard();
+
+        b.cleanBoard();
+
+        b.printBoard();
     }    
 }

@@ -50,6 +50,46 @@ public class Board2D
         _boardFlags = new int[MAX_HORIZONTAL];
     }
     
+    public bool isRowFull(int row)
+    {
+        for(int i = 0; i < MAX_HORIZONTAL; i++)
+        {
+            if(!this[row, i])
+            { 
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void cleanRow(int row)
+    {
+        for(int i = 0; i < MAX_HORIZONTAL; i++)
+        {
+            if(!this[row, i]) return;
+        }
+        
+        var index = 0b0000_0000_0000_0000_0000_0000_0000_0001 << row;
+
+        var postIndex = (index-1) | index;
+        
+        for(int i = 0; i < MAX_HORIZONTAL; i++)
+        {
+            var A_NOT_index = _boardFlags[i] & ~index;
+            
+            _boardFlags[i] =
+                (
+                    (A_NOT_index & postIndex) |
+                    ((A_NOT_index & ~postIndex) >> 1)
+                );
+        }
+    }
+
+    public void cleanBoard()
+    {
+        for(int i = 0; i < MAX_VERTICAL; i++) cleanRow(i);
+    }
+
     public void printBoard()
     {
         Console.WriteLine("  " + new string('=', MAX_HORIZONTAL*2));

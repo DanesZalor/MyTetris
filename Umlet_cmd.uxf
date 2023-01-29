@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.0.0">
-  <zoom_level>9</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
-      <y>315</y>
-      <w>135</w>
-      <h>198</h>
+      <x>60</x>
+      <y>24</y>
+      <w>90</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>Board2D : int[]
 --
@@ -17,10 +17,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>333</x>
-      <y>342</y>
-      <w>18</w>
-      <h>162</h>
+      <x>66</x>
+      <y>42</y>
+      <w>12</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>0
 --
@@ -38,10 +38,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>351</x>
-      <y>342</y>
-      <w>18</w>
-      <h>162</h>
+      <x>78</x>
+      <y>42</y>
+      <w>12</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>1
 --
@@ -59,10 +59,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>369</x>
-      <y>342</y>
-      <w>18</w>
-      <h>162</h>
+      <x>90</x>
+      <y>42</y>
+      <w>12</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>2
 --
@@ -80,10 +80,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>342</y>
-      <w>18</w>
-      <h>162</h>
+      <x>132</x>
+      <y>42</y>
+      <w>12</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>n
 --
@@ -101,10 +101,10 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>387</x>
-      <y>342</y>
-      <w>27</w>
-      <h>27</h>
+      <x>102</x>
+      <y>42</y>
+      <w>18</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>...</panel_attributes>
     <additional_attributes/>
@@ -112,10 +112,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>531</x>
-      <y>450</y>
-      <w>153</w>
-      <h>144</h>
+      <x>192</x>
+      <y>114</y>
+      <w>102</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>PiecePlacer
 --
@@ -133,10 +133,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
-      <y>522</y>
-      <w>180</w>
-      <h>135</h>
+      <x>60</x>
+      <y>162</y>
+      <w>120</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>/Piece/
 --
@@ -152,10 +152,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>351</x>
-      <y>675</y>
-      <w>99</w>
-      <h>27</h>
+      <x>78</x>
+      <y>264</y>
+      <w>66</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>TPiece :: Piece</panel_attributes>
     <additional_attributes/>
@@ -163,10 +163,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>648</y>
-      <w>45</w>
-      <h>54</h>
+      <x>60</x>
+      <y>246</y>
+      <w>30</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0;30.0;40.0</additional_attributes>
@@ -174,10 +174,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>351</x>
-      <y>711</y>
-      <w>99</w>
-      <h>27</h>
+      <x>78</x>
+      <y>288</y>
+      <w>66</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>OPiece :: Piece</panel_attributes>
     <additional_attributes/>
@@ -185,10 +185,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>531</x>
-      <y>603</y>
-      <w>153</w>
-      <h>81</h>
+      <x>192</x>
+      <y>216</y>
+      <w>102</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>PieceQueue
 --
@@ -201,10 +201,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>693</x>
-      <y>495</y>
-      <w>198</w>
-      <h>144</h>
+      <x>300</x>
+      <y>144</y>
+      <w>132</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>Game
 --
@@ -222,10 +222,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>297</x>
-      <y>117</y>
-      <w>1017</w>
-      <h>702</h>
+      <x>0</x>
+      <y>420</y>
+      <w>174</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>Tetris.CLI
 -
@@ -235,10 +235,10 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>306</x>
-      <y>279</y>
-      <w>603</w>
-      <h>522</h>
+      <x>48</x>
+      <y>0</y>
+      <w>402</w>
+      <h>348</h>
     </coordinates>
     <panel_attributes>Tetris.Core
 -
@@ -248,10 +248,10 @@ layer=-2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>648</y>
-      <w>45</w>
-      <h>90</h>
+      <x>60</x>
+      <y>246</y>
+      <w>30</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0;30.0;80.0</additional_attributes>
@@ -259,10 +259,10 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>351</x>
-      <y>747</y>
-      <w>99</w>
-      <h>27</h>
+      <x>78</x>
+      <y>312</y>
+      <w>66</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>IPiece :: Piece</panel_attributes>
     <additional_attributes/>
@@ -270,10 +270,10 @@ layer=-2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>648</y>
-      <w>45</w>
-      <h>135</h>
+      <x>60</x>
+      <y>246</y>
+      <w>30</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0;30.0;130.0</additional_attributes>
@@ -281,15 +281,160 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>468</x>
-      <y>315</y>
-      <w>153</w>
-      <h>63</h>
+      <x>156</x>
+      <y>24</y>
+      <w>54</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Vector2
 --
 + X : byte
 + Y : byte
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>474</x>
+      <y>18</y>
+      <w>156</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+Display()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>342</y>
+      <w>156</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6</x>
+      <y>450</y>
+      <w>108</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>Game
+-
+PrintInConsole()
+AcceptInput()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>198</x>
+      <y>420</y>
+      <w>180</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Tetris.WindowsForms
+-
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>228</x>
+      <y>342</y>
+      <w>78</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>204</x>
+      <y>444</y>
+      <w>108</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>Game
+-
+DoShit()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>390</y>
+      <w>276</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>0011101
+0011111
+0001111
+
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+
+0011101
+0011111
+0001111
+
+vvvvvvv
+
+0001101
+0001111
+0000111
+
+===================================
+
+0011101 
+0001000 x            index to clean
+_________
+0001101
+
+
+0011101 
+1110111 |         A &amp; ~index
+---------
+0010101
+
+0010101
+0001111 |        (A &amp; ~index) &amp; postIndex
+----------
+0000101 &lt;=========
+
+0010101 
+1110000 |        (A &amp; ~index ) &amp; preIndex
+----------
+0010000
+
+0010000 &gt; 1      ((A &amp; ~index ) &amp; preIndex) &gt;&gt; 1
+---------
+0001000 &lt;=========
+
+
+0000101 
+0001000 |        ((A &amp; ~index) &amp; postIndex) | (((A &amp; ~index ) &amp; preIndex) &gt;&gt; 1)
+---------
+0001101
+
+halign=left
+
+
+
+
+
+
+
+
 </panel_attributes>
     <additional_attributes/>
   </element>
