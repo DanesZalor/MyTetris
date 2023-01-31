@@ -1,20 +1,28 @@
+using System.Collections;
+
 namespace Tetris.Core.Pieces;
 
-public abstract class Piece
+public abstract class Piece : IEnumerable<Vector2D>
 {
     private Vector2D[] _blocks;
-    protected Vector2D[] Blocks => _blocks;
-
     public Vector2D Origin {
         get 
         {
-            Vector2D sum = new Vector2D(0,0);
-            foreach(var b in Blocks) sum += b;
+            (decimal X, decimal Y) = (0,0);
 
-            return new Vector2D
-            (
-                (byte)(sum.X / Blocks.Length), 
-                (byte)(sum.Y / Blocks.Length));
+            foreach(var _b in _blocks)
+            {
+                X += _b.X;
+                Y += _b.Y;
+            }
+
+            X /= _blocks.Length;
+            Y /= _blocks.Length;
+
+            if(X - (int)X > 0.5m) X = (int)X + 1m;
+            if(Y - (int)Y > 0.5m) Y = (int)Y + 1m;
+
+            return new Vector2D((byte)X,(byte)Y);
         }
     }
 
@@ -30,11 +38,22 @@ public abstract class Piece
         _blocks = coords;
     }
 
-    public void Move(Vector2D v)
-    {
-        for(int i = 0; i<4; i++) Blocks[i] += v;
+    public Piece Move(Vector2D v)
+    { 
+        for(int i = 0; i<4; i++) _blocks[i] += v; 
+        return this;
     }
 
-    public abstract void RotateClockwise();
-    public abstract void RotateCounterClockwise();
+    public abstract Piece RotateClockwise();
+    public abstract Piece RotateCounterClockwise();
+
+#region Enumerarable overrides
+    public IEnumerator<Vector2D> GetEnumerator() 
+        => ((IEnumerable<Vector2D>)_blocks).GetEnumerator();
+    
+
+    IEnumerator IEnumerable.GetEnumerator() 
+        => _blocks.GetEnumerator();
+#endregion
+
 }

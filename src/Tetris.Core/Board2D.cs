@@ -2,8 +2,8 @@
 
 public class Board2D
 {
-    private const byte MAX_HORIZONTAL = 10;
-    private const byte MAX_VERTICAL = 24;
+    public const byte MAX_HORIZONTAL = 10;
+    public const byte MAX_VERTICAL = 24;
     private static void validateCoords(int vertical, int horizontal)
     {
         if(!(vertical >= 0 && vertical < MAX_VERTICAL))
@@ -88,19 +88,5 @@ public class Board2D
     public void cleanBoard()
     {
         for(int i = 0; i < MAX_VERTICAL; i++) cleanRow(i);
-    }
-
-    public void printBoard()
-    {
-        Console.WriteLine("  " + new string('=', MAX_HORIZONTAL*2));
-        for(int x = MAX_VERTICAL-1; x >= 0; x--)
-        {
-            Console.Write("  ");
-            for(int y = 0; y < MAX_HORIZONTAL; y++)
-            {
-                Console.Write(this[x,y] ? "██" : "░░");
-            }
-            Console.WriteLine("  ");
-        }
     }
 }

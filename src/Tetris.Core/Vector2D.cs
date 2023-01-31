@@ -35,5 +35,6 @@ public struct Vector2D
 
     public override int GetHashCode()
         => this.GetHashCode();
-    
+
+    public override string ToString() => $"({X},{Y})";
 }
