@@ -2,16 +2,16 @@
 
 public class Board2D
 {
-    public const byte MAX_HORIZONTAL = 10;
-    public const byte MAX_VERTICAL = 24;
+    public const byte MAX_COLUMNS = 10;
+    public const byte MAX_ROWS = 24;
     private static void validateCoords(int vertical, int horizontal)
     {
-        if(!(vertical >= 0 && vertical < MAX_VERTICAL))
+        if(!(vertical >= 0 && vertical < MAX_ROWS))
         {
             throw new IndexOutOfRangeException("x is out of range");
         }
 
-        if(!(horizontal >= 0 && horizontal < MAX_HORIZONTAL))
+        if(!(horizontal >= 0 && horizontal < MAX_COLUMNS))
         {
             throw new IndexOutOfRangeException("y is out of range");
         }
@@ -47,12 +47,12 @@ public class Board2D
 
     public Board2D()
     {
-        _boardFlags = new int[MAX_HORIZONTAL];
+        _boardFlags = new int[MAX_COLUMNS];
     }
     
     public bool isRowFull(int row)
     {
-        for(int i = 0; i < MAX_HORIZONTAL; i++)
+        for(int i = 0; i < MAX_COLUMNS; i++)
         {
             if(!this[row, i])
             { 
@@ -64,7 +64,7 @@ public class Board2D
 
     public void cleanRow(int row)
     {
-        for(int i = 0; i < MAX_HORIZONTAL; i++)
+        for(int i = 0; i < MAX_COLUMNS; i++)
         {
             if(!this[row, i]) return;
         }
@@ -73,7 +73,7 @@ public class Board2D
 
         var postIndex = (index-1) | index;
         
-        for(int i = 0; i < MAX_HORIZONTAL; i++)
+        for(int i = 0; i < MAX_COLUMNS; i++)
         {
             var A_NOT_index = _boardFlags[i] & ~index;
             
@@ -87,6 +87,6 @@ public class Board2D
 
     public void cleanBoard()
     {
-        for(int i = 0; i < MAX_VERTICAL; i++) cleanRow(i);
+        for(int i = 0; i < MAX_ROWS; i++) cleanRow(i);
     }
 }

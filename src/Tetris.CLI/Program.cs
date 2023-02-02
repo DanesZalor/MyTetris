@@ -17,10 +17,10 @@ public class Program
 
         var piece = new TPiece0(new Vector2D(0,1));
         foreach(var _b in piece) Console.Write($"{_b} ");
-        Console.Write($"ORIGIN={piece.Origin}");
+        Console.WriteLine($"ORIGIN={piece.Origin}");
 
-        //pp.CurrentPiece = piece;
+        pp.CurrentPiece = piece;
 
-        //pp.printBoard();
+        pp.printBoard();
     }
 }

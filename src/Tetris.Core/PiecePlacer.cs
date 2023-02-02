@@ -21,12 +21,12 @@ public class PiecePlacer
     
     public void printBoard()
     {
-        Console.WriteLine(" ┌" + new string('─', Board2D.MAX_HORIZONTAL*2) + "┐");
+        Console.WriteLine(" ┌" + new string('─', Board2D.MAX_COLUMNS*2) + "┐");
 
-        for(int x = Board2D.MAX_VERTICAL-1; x >= 0; x--)
+        for(int x = Board2D.MAX_ROWS-1; x >= 0; x--)
         {
             Console.Write(" │");
-            for(int y = 0; y < Board2D.MAX_HORIZONTAL; y++)
+            for(int y = 0; y < Board2D.MAX_COLUMNS; y++)
             {
                 Console.Write(
                     (CurrentPiece?.Any(block => block.X == x && block.Y == y) ?? false) ? 
@@ -35,6 +35,6 @@ public class PiecePlacer
             Console.WriteLine("│ ");
         }
 
-        Console.WriteLine(" └" + new string('─', Board2D.MAX_HORIZONTAL*2) + "┘");
+        Console.WriteLine(" └" + new string('─', Board2D.MAX_COLUMNS*2) + "┘");
     }
 }
