@@ -23,14 +23,14 @@ public class PiecePlacer
     {
         Console.WriteLine(" ┌" + new string('─', Board2D.MAX_COLUMNS*2) + "┐");
 
-        for(int x = Board2D.MAX_ROWS-1; x >= 0; x--)
+        for(int row = Board2D.MAX_ROWS-1; row >= 0; row--)
         {
             Console.Write(" │");
-            for(int y = 0; y < Board2D.MAX_COLUMNS; y++)
+            for(int column = 0; column < Board2D.MAX_COLUMNS; column++)
             {
                 Console.Write(
-                    (CurrentPiece?.Any(block => block.X == x && block.Y == y) ?? false) ? 
-                    "▓▓" : (_board[x,y] ? "██" : "  "));
+                    (CurrentPiece?.Any(block => block.X == column && block.Y == row) ?? false) ? 
+                    "▓▓" : (_board[column, row] ? "██" : "  "));
             }
             Console.WriteLine("│ ");
         }

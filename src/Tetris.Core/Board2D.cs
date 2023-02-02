@@ -4,43 +4,43 @@ public class Board2D
 {
     public const byte MAX_COLUMNS = 10;
     public const byte MAX_ROWS = 24;
-    private static void validateCoords(int vertical, int horizontal)
+    private static void validateCoords(int column, int row)
     {
-        if(!(vertical >= 0 && vertical < MAX_ROWS))
+        if(!(row >= 0 && row < MAX_ROWS))
         {
-            throw new IndexOutOfRangeException("x is out of range");
+            throw new IndexOutOfRangeException("row(y) is out of range");
         }
 
-        if(!(horizontal >= 0 && horizontal < MAX_COLUMNS))
+        if(!(column >= 0 && column < MAX_COLUMNS))
         {
-            throw new IndexOutOfRangeException("y is out of range");
+            throw new IndexOutOfRangeException("column(x) is out of range");
         }
     }    
 
     private int[] _boardFlags;
 
-    public bool this[int vertical, int horizontal] 
+    public bool this[int column, int row] 
     {
         get {
-            validateCoords(vertical, horizontal);
+            validateCoords(column, row);
 
-            var xFlagCheck = 0b0000_0000_0000_0000_0000_0000_0000_0001 << vertical;
-            return (_boardFlags[horizontal] & xFlagCheck) > 0;
+            var xFlagCheck = 0b0000_0000_0000_0000_0000_0000_0000_0001 << row;
+            return (_boardFlags[column] & xFlagCheck) > 0;
         }
         set {
-            validateCoords(vertical, horizontal);
+            validateCoords(column, row);
             
-            var xFlagCheck = 0b0000_0000_0000_0000_0000_0000_0000_0001 << vertical;
+            var xFlagCheck = 0b0000_0000_0000_0000_0000_0000_0000_0001 << row;
             
             if(value)
             {
                 // A = A | B
-                _boardFlags[horizontal] |= xFlagCheck;
+                _boardFlags[column] |= xFlagCheck;
             }
             else
             {
                 // A = A & (~A | ~B)
-                _boardFlags[horizontal] &= (~_boardFlags[horizontal] | ~xFlagCheck); 
+                _boardFlags[column] &= (~_boardFlags[column] | ~xFlagCheck); 
             }
         }
     }
@@ -66,7 +66,7 @@ public class Board2D
     {
         for(int column = 0; column < MAX_COLUMNS; column++)
         {
-            if(!this[row, column]) return;
+            if(!this[column, row]) return;
         }
         
         var index = 0b0000_0000_0000_0000_0000_0000_0000_0001 << row;
