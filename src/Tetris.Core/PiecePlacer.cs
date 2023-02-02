@@ -8,9 +8,9 @@ public class PiecePlacer
 
     public Piece? CurrentPiece
     {
-        private get => _currentPiece;
+        get => _currentPiece;
         set{
-            _currentPiece = _currentPiece ?? value;
+            _currentPiece = value ?? throw new ArgumentNullException();
         }
     }
 

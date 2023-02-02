@@ -14,13 +14,17 @@ public class Program
         b.cleanBoard();
 
         var pp = new PiecePlacer(b);
-
-        var piece = new TPiece0(new Vector2D(3,3));
-        foreach(var _b in piece) Console.Write($"{_b} ");
-        Console.WriteLine($"ORIGIN={piece.Origin}");
-
-        pp.CurrentPiece = piece;
-
+        
+        Console.Clear();
+        pp.CurrentPiece = new TPiece0(new Vector2D(3,3)).MovedBy(new Vector2D(3,3));
         pp.printBoard();
+        
+        while(true){
+            Console.Clear();
+            pp.CurrentPiece = pp.CurrentPiece?.Rotated(clockwise:true);
+            pp.printBoard();
+            Console.WriteLine(pp.CurrentPiece?.GetType().Name);
+            Console.ReadLine();
+        }
     }
 }

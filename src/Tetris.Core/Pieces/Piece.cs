@@ -2,6 +2,7 @@ using System.Collections;
 
 namespace Tetris.Core.Pieces;
 
+// Ideally Immutable 
 public abstract class Piece : IEnumerable<Vector2D>
 {
     private Vector2D[] _blocks;
@@ -17,24 +18,12 @@ public abstract class Piece : IEnumerable<Vector2D>
 
     public Piece(Vector2D a, Vector2D b, Vector2D c, Vector2D d)
     {
-        var coords = new Vector2D[]{ a, b, c, d };
-
-        if(coords.Length != 4)
-        {
-            throw new ArgumentException("must be 4, retard");
-        }
-
-        _blocks = coords;
+        _blocks =  new Vector2D[]{ a, b, c, d };
     }
 
-    public Piece Move(Vector2D v)
-    { 
-        for(int i = 0; i<4; i++) _blocks[i] += v; 
-        return this;
-    }
-
-    public abstract Piece RotateClockwise();
-    public abstract Piece RotateCounterClockwise();
+    public abstract Piece MovedBy(Vector2D v);
+    public abstract Piece Rotated(bool clockwise);
+    
 
 #region Enumerarable overrides
     public IEnumerator<Vector2D> GetEnumerator() 
