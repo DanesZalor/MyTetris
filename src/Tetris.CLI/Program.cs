@@ -15,7 +15,7 @@ public class Program
 
         var pp = new PiecePlacer(b);
 
-        var piece = new TPiece0(new Vector2D(0,1));
+        var piece = new TPiece0(new Vector2D(3,3));
         foreach(var _b in piece) Console.Write($"{_b} ");
         Console.WriteLine($"ORIGIN={piece.Origin}");
 

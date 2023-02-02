@@ -64,20 +64,20 @@ public class Board2D
 
     public void cleanRow(int row)
     {
-        for(int i = 0; i < MAX_COLUMNS; i++)
+        for(int column = 0; column < MAX_COLUMNS; column++)
         {
-            if(!this[row, i]) return;
+            if(!this[row, column]) return;
         }
         
         var index = 0b0000_0000_0000_0000_0000_0000_0000_0001 << row;
 
         var postIndex = (index-1) | index;
         
-        for(int i = 0; i < MAX_COLUMNS; i++)
+        for(int column = 0; column < MAX_COLUMNS; column++)
         {
-            var A_NOT_index = _boardFlags[i] & ~index;
+            var A_NOT_index = _boardFlags[column] & ~index;
             
-            _boardFlags[i] =
+            _boardFlags[column] =
                 (
                     (A_NOT_index & postIndex) |
                     ((A_NOT_index & ~postIndex) >> 1)
