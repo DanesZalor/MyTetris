@@ -8,21 +8,10 @@ public abstract class Piece : IEnumerable<Vector2D>
     public Vector2D Origin {
         get 
         {
-            (decimal X, decimal Y) = (0,0);
+            var vec = new Vector2D(0,0);
+            foreach(var _b in _blocks) vec += _b;
 
-            foreach(var _b in _blocks)
-            {
-                X += _b.X;
-                Y += _b.Y;
-            }
-
-            X /= _blocks.Length;
-            Y /= _blocks.Length;
-
-            if(X - (int)X > 0.5m) X = (int)X + 1m;
-            if(Y - (int)Y > 0.5m) Y = (int)Y + 1m;
-
-            return new Vector2D((byte)X,(byte)Y);
+            return vec/_blocks.Length;
         }
     }
 

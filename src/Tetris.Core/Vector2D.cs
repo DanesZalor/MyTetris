@@ -23,6 +23,16 @@ public struct Vector2D
             Y = (byte)(a.Y - b.Y) 
         };
 
+    public static Vector2D operator /(Vector2D a, float b)
+    {
+        (float X, float Y) = (a.X / b, a.Y / b);
+        
+        if(X - (int)X > 0.5f) X = (int)X + 1f;
+        if(Y - (int)Y > 0.5f) Y = (int)Y + 1f;
+        
+        return new Vector2D((byte)X, (byte)Y);
+    }
+
     public static bool operator ==(Vector2D a, Vector2D b)
         => (a.X == b.X) && (a.Y == b.Y);
 
